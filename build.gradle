@@ -1,0 +1,25 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:7.18.2",
+            "org.junit.jupiter:junit-jupiter:6.1.3")
+
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
