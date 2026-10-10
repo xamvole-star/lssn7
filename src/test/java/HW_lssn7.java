@@ -49,11 +49,7 @@ public class HW_lssn7 {
     $("#hobbies-checkbox-2").click();
     $("#hobbies-checkbox-3").click();
 
-// todo загрузка файла
-
-
-
-
+    $("#uploadPicture").uploadFromClasspath("pic/photo_202623.jpg");
 
     $("#currentAddress").setValue("Moscow sity, Lenina 244 /45");
 
@@ -63,6 +59,8 @@ public class HW_lssn7 {
     $("#react-select-4-input").click();
     $("#react-select-4-option-0").shouldHave(text("Karnal")).hover().click();
 
+    $("#submit").click();
 
+  //  $("#root").hover().click(); // todo разобраться как закрыть это окно
     }
 }
