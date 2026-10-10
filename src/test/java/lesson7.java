@@ -62,5 +62,8 @@ public class lesson7 {
         $("#name").shouldHave(text(userName)).shouldBe(visible);
 
 
+
+
+
     }
 }
