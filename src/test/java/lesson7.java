@@ -26,7 +26,7 @@ public class lesson7 {
 // Настройки бразуера для стабильной работы тестов, только не помогает все равно, из за обновления хрома, селенид не поддерживает эту версию хрома и работает через раз
             ChromeOptions options = new ChromeOptions(); // создаем новый объект для обхода ботов
             options.addArguments("--disable-blink-features=AutomationControlled"); //скрывает факт автоматизации
-       /*
+/*
             options.addArguments("--disable-gpu"); // отключает GPU-рендеринг (частая причина таймаутов)
             options.addArguments("--no-sandbox"); // упрощает запуск
             options.addArguments("--disable-dev-shm-usage"); // обходит проблемы с shared memory
@@ -34,7 +34,7 @@ public class lesson7 {
             options.addArguments("--dns-prefetch-disable"); // отключает предзагрузку DNS — частая причина зависаний
             options.addArguments("--enable-cdp-events");    // принудительно включает CDP-события, стабилизирует связь
             options.addArguments("--user-data-dir=C:\\temp\\chrome-profile-" + System.currentTimeMillis()); // чистый запуск браузера
-       */
+      */
             Configuration.browserCapabilities = options;
    }
 
@@ -47,10 +47,11 @@ public class lesson7 {
         System.out.println("Real size: " + getWebDriver().manage().window().getSize());
 
  */
+        String userName = "Egor Ivanov"; // добавлена перменная имя
 
         $("h1").shouldHave(text("Text Box"));
 
-        $("#userName").setValue("Egor");
+        $("#userName").setValue(userName);
         $("#userEmail").setValue("Egor@mail.ru");
         $("#currentAddress").setValue("Moscow sity");
         $("#permanentAddress").setValue("Lenina 244 /45");
@@ -58,7 +59,7 @@ public class lesson7 {
         $("#submit").shouldHave(text("Submit")).hover().click();
 
 
-        $("#name").shouldHave(text("Egor")).shouldBe(visible);
+        $("#name").shouldHave(text(userName)).shouldBe(visible);
 
 
     }
